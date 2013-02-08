@@ -1,6 +1,6 @@
 # Picktastic
 
-TODO: Write a gem description
+Adds a custom input picktastic_date_picker and supplies a js file that will bind the jquery datepicker widget to these inputs,
 
 ## Installation
 
@@ -16,9 +16,19 @@ Or install it yourself as:
 
     $ gem install picktastic
 
+Add the following file to your javascripts that are loaded on every page, i.e. `app/assets/javascripts/application.js`
+
+    //= require picktastic/onload
+
 ## Usage
 
-TODO: Write usage instructions here
+To create a date input field use the following builder
+    
+      = f.input :starts_at, as: :picktastic_date_picker
+
+To force a different date format for the datepicker create an initializer (i.e. `config/initializers/datepicker.rb`) where you set a format string in the jquery format:
+
+    PicktasticDatePickerInput::format = 'dd.mm.yy' 
 
 ## Contributing
 

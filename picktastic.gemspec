@@ -7,9 +7,9 @@ Gem::Specification.new do |gem|
   gem.name          = "picktastic"
   gem.version       = Picktastic::VERSION
   gem.authors       = ["Axel Tetzlaff"]
-  gem.email         = ["axel.tetzlaff@gmx.de"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.email         = ["axel.tetzlaff@fortytools.com"]
+  gem.description   = %q{Provides a formtastc input that binds the jquery datepicker to the input field}
+  gem.summary       = %q{Adds a custom input picktastic_date_picker and supplies a js file that will bind the jquery datepicker widget to these inputs}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
