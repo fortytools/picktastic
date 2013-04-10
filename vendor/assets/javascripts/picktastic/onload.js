@@ -1,14 +1,24 @@
-$(picktastic_init)
+$(picktastic_init);
 
-function picktastic_init() { 
-  var inputs = $('input.picktastic_date_picker');
-  if (inputs.length  > 0) {
+picktasticProperties = ['dateFormat', 'minDate', 'maxDate'];
 
-    var format = $(inputs[0]).data('dateformat');
-    var options = {};
-    if (format != '') {
-      options = { dateFormat: format}
+function picktastic_init() {
+  var addProperty = function(object, input, key) {
+    // haml lowercases all attribute-names so we need to look up the data attributes lowercased
+    var value = input.data(key.toLowerCase());
+    if (value !== undefined) {
+      object[key] = value;
     }
-    inputs.datepicker(options); 
-  }
+  };
+
+  $('input.picktastic_date_picker').each(function(idx, elem) {
+    var input = $(elem);
+    var options = {};
+
+    $.each(picktasticProperties, function(idx, key) {
+      addProperty(options, input, key);
+    });
+    input.datepicker(options);
+  });
 }
+

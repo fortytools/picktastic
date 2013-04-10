@@ -6,4 +6,3 @@ class PicktasticDatePickerInput < Formtastic::Inputs::StringInput
     super.merge(:class => "picktastic_date_picker", :'data-dateformat' => PicktasticDatePickerInput.format)
   end
 end
-
