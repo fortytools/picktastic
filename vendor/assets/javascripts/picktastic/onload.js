@@ -1,6 +1,6 @@
 $(picktastic_init);
 
-picktasticProperties = ['dateFormat', 'minDate', 'maxDate'];
+picktasticProperties = ['dateFormat', 'minDate', 'maxDate', 'firstDay'];
 
 function picktastic_init() {
   var addProperty = function(object, input, key) {
