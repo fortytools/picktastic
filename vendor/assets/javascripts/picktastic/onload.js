@@ -1,6 +1,6 @@
 $(picktastic_init);
 
-picktasticProperties = ['dateFormat', 'minDate', 'maxDate', 'firstDay', 'monthNames', 'dayNames', 'dayNamesMin'];
+picktasticProperties = ['format', 'weekStart', 'autoclose', 'language', 'todayBtn'];
 
 function picktastic_init() {
   var addProperty = function(object, input, key) {
