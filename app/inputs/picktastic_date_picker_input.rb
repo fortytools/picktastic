@@ -1,4 +1,4 @@
-class PicktasticDatePickerInput < Formtastic::Inputs::StringInput
+class PicktasticDatePickerInput < FormtasticBootstrap::Inputs::StringInput
 
   cattr_accessor :format, :week_start, :language, :auto_close, :input_value_format, :today_button, :data
 
