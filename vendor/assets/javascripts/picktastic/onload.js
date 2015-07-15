@@ -9,14 +9,18 @@ var addProperty = function(object, input, key) {
   }
 };
 
-function initPicktasticForElement(elem) {
+function initPicktasticForElement(elem, customOptions) {
   var input = $(elem);
   var options = {};
 
   $.each(picktasticProperties, function(idx, key) {
     addProperty(options, input, key);
   });
-  return input.datepicker(options);
+
+  input.data('picktastic-initialized', true)
+
+  var completeOptions = $.extend({}, options, customOptions || {});
+  return input.datepicker(completeOptions);
 };
 
 function picktastic_init() {
@@ -24,4 +28,3 @@ function picktastic_init() {
     initPicktasticForElement(elem);
   });
 };
-
