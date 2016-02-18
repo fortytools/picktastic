@@ -8,11 +8,11 @@ class PicktasticDatePickerInput < FormtasticBootstrap::Inputs::StringInput
   @@language = I18n.locale
   @@auto_close = true
   @@today_button = "linked"
-  @@data = {format: @@format,
-            todaybtn: @@today_button,
-            weekstart: @@week_start,
-            autoclose: @@auto_close,
-            language: @@language.to_s}
+  @@data = { format: @@format,
+             todaybtn: @@today_button,
+             weekstart: @@week_start,
+             autoclose: @@auto_close,
+             language: @@language.to_s }
 
   def self.format_value value
     if value.present?
@@ -21,9 +21,12 @@ class PicktasticDatePickerInput < FormtasticBootstrap::Inputs::StringInput
   end
 
   def input_html_options
-    super.merge(:class => "picktastic_date_picker",
-                :value => value,
-                :data => @@data)
+    parent_options = super
+    parent_data = parent_options[:data] || {}
+    data = @@data.merge(parent_data)
+    parent_options.merge(:class => "picktastic_date_picker",
+                         :value => value,
+                         :data => data)
   end
 
   def value
